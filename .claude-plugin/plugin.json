@@ -1,5 +1,5 @@
 {
-  "name": "faxforagents",
+  "name": "faxforagents-plugin",
   "displayName": "Fax for Agents",
   "version": "1.0.0",
   "description": "Send and receive faxes from Claude Code through Fax for Agents: documents from text, Markdown, HTML or an uploaded PDF or image, exact quotes, human approvals bound to one send, delegated policies, delivery evidence and the inbox. The hosted MCP server plus the fax-for-agents skill. A test key uses the sandbox at no cost. Collects no telemetry.",

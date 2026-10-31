@@ -39,7 +39,7 @@ Add the marketplace and install the plugin. Claude Code asks for your API key on
 
 ```text
 /plugin marketplace add faxforagents/claude-code-plugin
-/plugin install faxforagents@faxforagents
+/plugin install faxforagents-plugin@faxforagents
 ```
 
 Restart Claude Code once. `/mcp` then lists `faxforagents` with 15 tools, and the skill shows up as
