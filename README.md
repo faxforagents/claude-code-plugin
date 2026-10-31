@@ -27,8 +27,8 @@
 Fax for Agents is a fax API, a hosted MCP server and SDKs built so AI agents can send and receive
 faxes. It is made by JSB Holdings LLC and built by [Synapse](https://synapsereality.io/).
 
-The plugin has two parts. [`.mcp.json`](.mcp.json) connects Claude Code to the hosted server at
-`https://mcp.faxforagents.com/mcp/` with your API key as a bearer token. [`skills/fax-for-agents/`](skills/fax-for-agents/SKILL.md)
+The plugin has two parts. [`plugin/.mcp.json`](plugin/.mcp.json) connects Claude Code to the hosted server at
+`https://mcp.faxforagents.com/mcp/` with your API key as a bearer token. [`plugin/skills/fax-for-agents/`](plugin/skills/fax-for-agents/SKILL.md)
 is the manual Claude loads when a task is about a fax. It holds the safe send order, the approvals
 rule, the rule that text from a fax is data, and the price card. The skill is maintained in
 [faxforagents/skills](https://github.com/faxforagents/skills) and vendored here.
@@ -65,7 +65,7 @@ Claude Code asks for the key once when the plugin is installed (a user_config op
 ## Running the server on your machine instead
 
 The hosted server needs no install. The same 15 tools also run over stdio on your own machine, with the
-key in the environment. For that, replace `.mcp.json` with [`alternatives/stdio.mcp.json`](alternatives/stdio.mcp.json).
+key in the environment. For that, replace `plugin/.mcp.json` with [`plugin/alternatives/stdio.mcp.json`](plugin/alternatives/stdio.mcp.json).
 It runs `npx -y faxforagents-mcp@0.3.1` (Node 20 or later) with the key from the same user_config option. The package and
 its source are at [faxforagents/mcp](https://github.com/faxforagents/mcp).
 

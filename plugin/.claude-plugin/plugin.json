@@ -23,7 +23,7 @@
   "supportUrl": "https://faxforagents.com/docs/",
   "privacyPolicyUrl": "https://faxforagents.com/privacy",
   "termsOfServiceUrl": "https://faxforagents.com/terms",
-  "icon": "./assets/logo-512.png",
+  "icon": "https://faxforagents.com/brand/logo-512.png",
   "userConfig": {
     "FAXFORAGENTS_API_KEY": {
       "title": "Fax for Agents API key",

@@ -18,31 +18,31 @@ def load(path: str) -> dict:
 
 def main() -> int:
     problems: list[str] = []
-    plugin = load(".claude-plugin/plugin.json")
+    plugin = load("plugin/.claude-plugin/plugin.json")
     for field in ("name", "version", "description", "author", "homepage", "repository", "license", "keywords"):
         if field not in plugin:
             problems.append(f"plugin.json: {field} is missing")
-    if plugin.get("name") != "faxforagents":
-        problems.append("plugin.json: name must be faxforagents")
+    if plugin.get("name") != "faxforagents-plugin":
+        problems.append("plugin.json: name must be faxforagents-plugin")
     market = load(".claude-plugin/marketplace.json")
     for field in ("name", "owner", "plugins"):
         if field not in market:
             problems.append(f"marketplace.json: {field} is missing")
     entries = market.get("plugins", [])
-    if len(entries) != 1 or entries[0].get("source") != "./" or entries[0].get("name") != plugin.get("name"):
-        problems.append("marketplace.json: one entry named like the plugin with source ./")
-    mcp = load(".mcp.json")
+    if len(entries) != 1 or entries[0].get("source") != "./plugin" or entries[0].get("name") != plugin.get("name"):
+        problems.append("marketplace.json: one entry named like the plugin with source ./plugin")
+    mcp = load("plugin/.mcp.json")
     server = mcp.get("mcpServers", {}).get("faxforagents", {})
     if server.get("url") != "https://mcp.faxforagents.com/mcp/":
         problems.append(".mcp.json: the hosted server url must be https://mcp.faxforagents.com/mcp/")
-    if "${FAXFORAGENTS_API_KEY}" not in json.dumps(server):
-        problems.append(".mcp.json: the key must come from ${FAXFORAGENTS_API_KEY}")
-    stdio = load("alternatives/stdio.mcp.json")["mcpServers"]["faxforagents"]
-    if stdio.get("args") != ["-y", "faxforagents-mcp"]:
-        problems.append("alternatives/stdio.mcp.json: args must be -y faxforagents-mcp")
-    skill = ROOT / "skills" / "fax-for-agents" / "SKILL.md"
+    if "${user_config.FAXFORAGENTS_API_KEY}" not in json.dumps(server):
+        problems.append(".mcp.json: the key must come from ${user_config.FAXFORAGENTS_API_KEY}")
+    stdio = load("plugin/alternatives/stdio.mcp.json")["mcpServers"]["faxforagents"]
+    if stdio.get("args") != ["-y", "faxforagents-mcp@0.3.1"]:
+        problems.append("alternatives/stdio.mcp.json: args must be -y faxforagents-mcp@0.3.1")
+    skill = ROOT / "plugin" / "skills" / "fax-for-agents" / "SKILL.md"
     if not skill.is_file() or not skill.read_text(encoding="utf-8").startswith("---\nname: fax-for-agents\n"):
-        problems.append("skills/fax-for-agents/SKILL.md is missing or its frontmatter does not start with the name")
+        problems.append("plugin/skills/fax-for-agents/SKILL.md is missing or its frontmatter does not start with the name")
     for problem in problems:
         print(f"check_plugin: FAIL: {problem}", file=sys.stderr)
     if not problems:
