@@ -1,0 +1,24 @@
+{
+  "name": "faxforagents",
+  "owner": {
+    "name": "Fax for Agents",
+    "email": "hello@faxforagents.com",
+    "url": "https://faxforagents.com"
+  },
+  "metadata": {
+    "description": "Fax for Agents plugins for Claude Code: send and receive faxes with the hosted MCP server and the fax-for-agents skill.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "faxforagents",
+      "source": "./",
+      "description": "Send and receive faxes from Claude Code: the Fax for Agents MCP server (15 tools, quotes, human approvals, delivery evidence, inbox) plus the fax-for-agents skill.",
+      "category": "productivity",
+      "tags": ["fax", "mcp", "approvals", "documents"],
+      "homepage": "https://faxforagents.com/mcp/",
+      "repository": "https://github.com/faxforagents/claude-code-plugin",
+      "license": "MIT"
+    }
+  ]
+}

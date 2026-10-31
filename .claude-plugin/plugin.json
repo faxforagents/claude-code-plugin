@@ -1,0 +1,26 @@
+{
+  "name": "faxforagents",
+  "displayName": "Fax for Agents",
+  "version": "1.0.0",
+  "description": "Send and receive faxes from Claude Code through Fax for Agents: documents from text, Markdown, HTML or an uploaded PDF or image, exact quotes, human approvals bound to one send, delegated policies, delivery evidence and the inbox. The hosted MCP server plus the fax-for-agents skill. A test key uses the sandbox at no cost. Collects no telemetry.",
+  "author": {
+    "name": "Fax for Agents",
+    "email": "hello@faxforagents.com",
+    "url": "https://faxforagents.com"
+  },
+  "homepage": "https://faxforagents.com/mcp/",
+  "repository": "https://github.com/faxforagents/claude-code-plugin",
+  "license": "MIT",
+  "keywords": [
+    "fax",
+    "fax-api",
+    "agents",
+    "approvals",
+    "mcp",
+    "skill"
+  ],
+  "documentationUrl": "https://faxforagents.com/docs/",
+  "supportUrl": "https://faxforagents.com/docs/",
+  "privacyPolicyUrl": "https://faxforagents.com/privacy",
+  "termsOfServiceUrl": "https://faxforagents.com/terms"
+}
