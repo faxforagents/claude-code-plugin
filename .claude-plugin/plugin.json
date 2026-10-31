@@ -22,5 +22,14 @@
   "documentationUrl": "https://faxforagents.com/docs/",
   "supportUrl": "https://faxforagents.com/docs/",
   "privacyPolicyUrl": "https://faxforagents.com/privacy",
-  "termsOfServiceUrl": "https://faxforagents.com/terms"
+  "termsOfServiceUrl": "https://faxforagents.com/terms",
+  "icon": "./assets/logo-512.png",
+  "userConfig": {
+    "FAXFORAGENTS_API_KEY": {
+      "title": "Fax for Agents API key",
+      "description": "Your Fax for Agents API key (ffa_test_... for the sandbox, ffa_live_... for real sends). Create one at https://app.faxforagents.com/app/keys. A test key is free.",
+      "type": "string",
+      "sensitive": true
+    }
+  }
 }

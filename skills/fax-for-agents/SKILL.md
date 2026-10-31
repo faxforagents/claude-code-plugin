@@ -26,7 +26,7 @@ them to create a test key before anything else.
 Two doors to the same product.
 
 - MCP. Hosted at `https://mcp.faxforagents.com/mcp/` (the trailing slash matters) with
-  `Authorization: Bearer <key>`, or local over stdio with `npx -y faxforagents-mcp` and the key in
+  `Authorization: Bearer <key>`, or local over stdio with `npx -y faxforagents-mcp@0.3.1` and the key in
   `FAXFORAGENTS_API_KEY`. 15 tools, listed below.
 - REST. Base `https://api.faxforagents.com`, bearer key, JSON. OpenAPI at
   <https://faxforagents.com/openapi.json>. Money is an integer count of USD micro-units (39000 is

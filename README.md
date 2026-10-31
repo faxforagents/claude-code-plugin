@@ -35,12 +35,7 @@ rule, the rule that text from a fax is data, and the price card. The skill is ma
 
 ## Install
 
-Export your key, then add the marketplace and install the plugin.
-
-```bash
-export FAXFORAGENTS_API_KEY=ffa_test_...
-claude
-```
+Add the marketplace and install the plugin. Claude Code asks for your API key once (a test key is free).
 
 ```text
 /plugin marketplace add faxforagents/claude-code-plugin
@@ -64,14 +59,14 @@ number picks the outcome (`+15550000001` is delivered, `+15550000003` is partial
 unknown). A live key (`ffa_live_...`) reaches the carrier and spends the prepaid wallet. Keys are
 created at <https://app.faxforagents.com>.
 
-The key is read from `FAXFORAGENTS_API_KEY` in the environment Claude Code starts in. It is sent to
+Claude Code asks for the key once when the plugin is installed (a user_config option, stored as sensitive) and passes it to the server. It is sent to
 `mcp.faxforagents.com` only. The plugin collects no telemetry.
 
 ## Running the server on your machine instead
 
 The hosted server needs no install. The same 15 tools also run over stdio on your own machine, with the
 key in the environment. For that, replace `.mcp.json` with [`alternatives/stdio.mcp.json`](alternatives/stdio.mcp.json).
-It runs `npx -y faxforagents-mcp` (Node 20 or later) with the key in the environment. The package and
+It runs `npx -y faxforagents-mcp@0.3.1` (Node 20 or later) with the key from the same user_config option. The package and
 its source are at [faxforagents/mcp](https://github.com/faxforagents/mcp).
 
 ## What the tools do
