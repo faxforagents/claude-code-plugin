@@ -43,5 +43,8 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - run: |
-          curl -fsSL https://raw.githubusercontent.com/faxforagents/skills/main/skills/fax-for-agents/SKILL.md -o /tmp/SKILL.md
-          diff /tmp/SKILL.md plugin/skills/fax-for-agents/SKILL.md && echo "the vendored skill is current"
+          for f in SKILL.md LICENSE references/mcp.md references/api.md; do
+            mkdir -p "/tmp/source/$(dirname "$f")"
+            curl -fsSL "https://raw.githubusercontent.com/faxforagents/skills/main/skills/fax-for-agents/$f" -o "/tmp/source/$f"
+            diff "/tmp/source/$f" "plugin/skills/fax-for-agents/$f"
+          done && echo "the vendored skill is current"
