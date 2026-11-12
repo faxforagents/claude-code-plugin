@@ -154,7 +154,7 @@ See [Hermes MCP guidance](https://hermes-agent.nousresearch.com/docs/user-guide/
 ## Verify
 
 Reload the client's server list.
-Confirm all 15 tools listed in [SKILL.md](../SKILL.md#hosted-tools).
+Confirm all 17 tools listed in [SKILL.md](../SKILL.md#hosted-tools).
 Call `get_fax_capabilities` and confirm the credential environment before sending.
 For sandbox testing, use an `ffa_test_` key and `+15550000001`.
 Follow the skill's approval and untrusted-text rules.

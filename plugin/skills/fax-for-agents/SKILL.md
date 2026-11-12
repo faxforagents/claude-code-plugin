@@ -75,7 +75,7 @@ Review requests notify a person.
 A live send requires approval or an allowing policy.
 The tool table lists required credential scopes.
 
-The launch-v1 price card took effect on 2026-10-28.
+The launch-v2 price card took effect on 2026-10-31.
 Sending costs $0.039 per page, and receiving costs $0.019 per page.
 Numbers cost $2 monthly, and the Agent workspace costs $19 monthly.
 Sandbox pages cost nothing.
@@ -147,7 +147,7 @@ On `ok=false`, follow the documented remedy within the user's authority.
 | `scope_missing` | Ask the owner for the required scope |
 | `approval_required` | Request review and wait for authorization |
 | `quote_expired` | Quote again and reassess authorization |
-| `insufficient_balance` | Ask the owner to review the dashboard balance |
+| `insufficient_balance` | Give the owner the top-up link from the message, or use `request_card_payment` when it offers the card path |
 
 ## Hosted tools
 
@@ -165,6 +165,8 @@ Names and arguments match the [hosted definitions](https://github.com/faxforagen
 | `list_faxes` | List outbound jobs | `fax:read` |
 | `get_fax_balance` | Read available and held funds | `billing:read` |
 | `cancel_fax` | Request cancellation | `fax:cancel` |
+| `request_card_payment` | Ask a person to pay for one quoted fax by card | `fax:send` |
+| `get_card_payment_status` | Read a card payment order | `fax:read` |
 | `request_human_review` | Request approval or human help | `approval:request` |
 | `get_review_status` | Read a review decision | `approval:read` |
 | `list_inbox` | List received fax metadata | `inbox:read` |

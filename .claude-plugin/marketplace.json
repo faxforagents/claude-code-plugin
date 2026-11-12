@@ -13,7 +13,7 @@
     {
       "name": "faxforagents-plugin",
       "source": "./plugin",
-      "description": "Send and receive faxes from Claude Code: the Fax for Agents MCP server (15 tools, quotes, human approvals, delivery evidence, inbox) plus the fax-for-agents skill.",
+      "description": "Send and receive faxes from Claude Code: the Fax for Agents MCP server (17 tools, quotes, human approvals, delivery evidence, inbox) plus the fax-for-agents skill.",
       "category": "productivity",
       "tags": [
         "fax",
