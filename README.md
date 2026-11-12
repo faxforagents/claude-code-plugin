@@ -95,7 +95,7 @@ that spends money, so give Claude a key with `fax:send` only when you mean it.
 
 ## Prices
 
-Price card launch-v1 is effective from 2026-10-28. $0.039 per page sent, $0.019 per page received.
+Price card launch-v2 is effective from 2026-10-31. $0.039 per page sent, $0.019 per page received.
 $2 per number per month, $19 per month for the Agent workspace. Sandbox pages cost 0.
 
 ## Working on this repository
