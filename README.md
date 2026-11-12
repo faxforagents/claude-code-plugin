@@ -4,7 +4,7 @@
 
 <h1 align="center">Fax for Agents for Claude Code</h1>
 
-<p align="center">A Claude Code plugin for <a href="https://faxforagents.com">Fax for Agents</a>. The hosted MCP server (15 tools) plus the fax-for-agents skill, in one install.</p>
+<p align="center">A Claude Code plugin for <a href="https://faxforagents.com">Fax for Agents</a>. The hosted MCP server (17 tools) plus the fax-for-agents skill, in one install.</p>
 
 <p align="center">
   <a href="https://faxforagents.com">Website</a> ·
@@ -21,7 +21,7 @@
 <p align="center">
   <a href="https://github.com/faxforagents/claude-code-plugin/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/faxforagents/claude-code-plugin/ci.yml?branch=main&label=ci" alt="CI"></a>
   <a href="https://github.com/faxforagents/claude-code-plugin/blob/main/LICENSE"><img src="https://img.shields.io/badge/licence-MIT-1f6feb" alt="MIT licence"></a>
-  <a href="https://faxforagents.com/mcp/"><img src="https://img.shields.io/badge/MCP-15%20tools-6b4fbb" alt="MCP"></a>
+  <a href="https://faxforagents.com/mcp/"><img src="https://img.shields.io/badge/MCP-17%20tools-6b4fbb" alt="MCP"></a>
 </p>
 
 Fax for Agents is a fax API, a hosted MCP server and SDKs built so AI agents can send and receive
@@ -42,7 +42,7 @@ Add the marketplace and install the plugin. Claude Code asks for your API key on
 /plugin install faxforagents-plugin@faxforagents-marketplace
 ```
 
-Restart Claude Code once. `/mcp` then lists `faxforagents` with 15 tools, and the skill shows up as
+Restart Claude Code once. `/mcp` then lists `faxforagents` with 17 tools, and the skill shows up as
 `faxforagents:fax-for-agents`. Ask something like "Send a one page test fax to +15550000001" and watch
 `prepare_fax`, `quote_fax`, `send_approved_fax` and `get_fax_status` run in that order.
 
@@ -64,7 +64,7 @@ Claude Code asks for the key once when the plugin is installed (a user_config op
 
 ## Running the server on your machine instead
 
-The hosted server needs no install. The same 15 tools also run over stdio on your own machine, with the
+The hosted server needs no install. The same 17 tools also run over stdio on your own machine, with the
 key in the environment. For that, replace `plugin/.mcp.json` with [`plugin/alternatives/stdio.mcp.json`](plugin/alternatives/stdio.mcp.json).
 It runs `npx -y faxforagents-mcp@0.3.1` (Node 20 or later) with the key from the same user_config option. The package and
 its source are at [faxforagents/mcp](https://github.com/faxforagents/mcp).
@@ -76,13 +76,15 @@ its source are at [faxforagents/mcp](https://github.com/faxforagents/mcp).
 | `get_guide` | The manual, whole or by section. Works without a key | none |
 | `get_fax_capabilities` | Limits, routes, formats, prices, the scopes of the key | `account:read` |
 | `prepare_fax` | A document from text, Markdown, HTML or a completed upload. Never sends | `document:write` |
-| `get_document` | One prepared document by id: page count, sha256, warnings, previews | `document:read` |
+| `get_fax_document` | One prepared document by id: page count, sha256, warnings, previews | `document:read` |
 | `quote_fax` | The exact price of one document to one destination, with the policy verdict | `fax:quote` |
 | `send_approved_fax` | Queue a quoted fax. Answers queued, never delivered | `fax:send` |
 | `get_fax_status` | State and attempts, with the carrier's evidence once delivered or partial | `fax:read` |
 | `list_faxes` | Newest first, by state, with a cursor | `fax:read` |
 | `get_fax_balance` | Available and held balance | `billing:read` |
 | `cancel_fax` | Cancel while queued, best effort once sending | `fax:cancel` |
+| `request_card_payment` | Ask a person to pay for one quoted fax by card, with no wallet balance | `fax:send` |
+| `get_card_payment_status` | One card payment order: paid or not, what was charged, the fax it sent | `fax:read` |
 | `request_human_review` | With `quote_id`, ask a person to approve that send. Without it, ask for help | `approval:request` |
 | `get_review_status` | Where one approval or help request stands | `approval:read` |
 | `list_inbox` | Received faxes, metadata only | `inbox:read` |
