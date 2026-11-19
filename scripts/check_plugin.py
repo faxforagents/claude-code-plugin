@@ -38,8 +38,8 @@ def main() -> int:
     if "${user_config.FAXFORAGENTS_API_KEY}" not in json.dumps(server):
         problems.append(".mcp.json: the key must come from ${user_config.FAXFORAGENTS_API_KEY}")
     stdio = load("plugin/alternatives/stdio.mcp.json")["mcpServers"]["faxforagents"]
-    if stdio.get("args") != ["-y", "faxforagents-mcp@0.3.1"]:
-        problems.append("alternatives/stdio.mcp.json: args must be -y faxforagents-mcp@0.3.1")
+    if stdio.get("args") != ["-y", "faxforagents-mcp@0.5.9"]:
+        problems.append("alternatives/stdio.mcp.json: args must be -y faxforagents-mcp@0.5.9")
     skill = ROOT / "plugin" / "skills" / "fax-for-agents" / "SKILL.md"
     if not skill.is_file() or not skill.read_text(encoding="utf-8").startswith("---\nname: fax-for-agents\n"):
         problems.append("plugin/skills/fax-for-agents/SKILL.md is missing or its frontmatter does not start with the name")

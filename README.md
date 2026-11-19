@@ -67,7 +67,7 @@ Claude Code asks for the key once when the plugin is installed (a user_config op
 
 The hosted server needs no install. The same 17 tools also run over stdio on your own machine, with the
 key in the environment. For that, replace `plugin/.mcp.json` with [`plugin/alternatives/stdio.mcp.json`](plugin/alternatives/stdio.mcp.json).
-It runs `npx -y faxforagents-mcp@0.3.1` (Node 20 or later) with the key from the same user_config option. The package and
+It runs `npx -y faxforagents-mcp@0.5.9` (Node 20 or later) with the key from the same user_config option. The package and
 its source are at [faxforagents/mcp](https://github.com/faxforagents/mcp).
 
 ## What the tools do

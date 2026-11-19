@@ -4,7 +4,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "faxforagents-mcp@0.3.1"
+        "faxforagents-mcp@0.5.9"
       ],
       "env": {
         "FAXFORAGENTS_API_KEY": "${user_config.FAXFORAGENTS_API_KEY}"
