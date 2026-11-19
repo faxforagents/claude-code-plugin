@@ -47,4 +47,5 @@ jobs:
             mkdir -p "/tmp/source/$(dirname "$f")"
             curl -fsSL "https://raw.githubusercontent.com/faxforagents/skills/main/skills/fax-for-agents/$f" -o "/tmp/source/$f"
             diff "/tmp/source/$f" "plugin/skills/fax-for-agents/$f"
-          done && echo "the vendored skill is current"
+          done
+          echo "the vendored skill is current"
